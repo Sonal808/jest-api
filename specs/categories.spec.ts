@@ -95,7 +95,7 @@ describe("Update Categories", () => {
     const res = await controller
       .putCategories(categoryId, data)
       .set("Authorization", "Bearer " + token);
-    expect(res.statusCode).toEqual(201);
+    expect(res.statusCode).toEqual(200);
     expect(res.body.name).toEqual(data.name);
     expect(Object.keys(res.body)).toEqual(["_id", "name", "__v"]);
   });
